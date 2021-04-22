@@ -1,5 +1,3 @@
-This build process will enable you to demo the Live Query API's capabilities as see in this [video](https://onevmw.sharepoint.com/teams/SBUTechnicalSolutionOrganization/SitePages/Selling-Beyond-Security.aspx). 
-
 Make sure you have installed the Docker Desktop from [here](https://www.docker.com/products/docker-desktop).
 
 After you pull down this repo, you need to edit the `var/www/cgi-bin/credentials.psc` file and add your credentials, and ORG key. 

@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Bitlocker Status",
+    "notify_on_finish": "false",
+    "sql": "SELECT drive_letter, CASE protection_status WHEN 0 THEN 'OFF' WHEN 1 THEN 'ON (Unlocked)' WHEN 2 THEN 'ON (Locked)' END 'Bitlocker Status' FROM bitlocker_info;"
+}

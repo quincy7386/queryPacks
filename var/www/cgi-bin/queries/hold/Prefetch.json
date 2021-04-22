@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name":"Prefetch",
+    "notify_on_finish":"false",
+    "sql":"select filename,datetime(ctime,'unixepoch','localtime') as ctime,datetime(atime,'unixepoch','localtime') as atime,datetime(mtime,'unixepoch','localtime') as mtime from file where path like '\\windows\\prefetch\\%.pf';"
+}

@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Software Utilization",
+    "notify_on_finish": "false",
+    "sql":" with r1 as (select name, substr(data,0,17) as last_used, substr(key,71,89) as sid from registry where path like 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\bam\\UserSettings\\S-1-5-21-%\\%'), r2 as (select substr(key,77,90) as sid,data from registry where key like 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList\\%' and name = 'ProfileImagePath') select r1.name,last_used,r2.data as user_name,r1.sid from r1 join r2 using(sid) where r1.name not in ('SequenceNumber','Version');"
+}

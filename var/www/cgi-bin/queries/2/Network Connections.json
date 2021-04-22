@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Network Connections",
+    "notify_on_finish": "false",
+    "sql": "select p.pid, p.name, case family when 2 then 'IPV4' when 23 then 'IPV6' end as 'family', case protocol when 6 then 'TCP' when 17 then 'UDP' end as 'protocol', local_address, local_port, remote_address, remote_port, pos.state from process_open_sockets as pos join processes as p using(pid)order by p.pid asc;"
+}

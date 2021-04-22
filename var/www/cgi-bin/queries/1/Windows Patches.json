@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Windows Patches",
+    "notify_on_finish": "false",
+    "sql": "SELECT * FROM patches;"
+}

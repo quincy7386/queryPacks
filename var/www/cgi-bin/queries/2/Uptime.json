@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Uptime",
+    "notify_on_finish": "false",
+    "sql": "select * from uptime;"
+}

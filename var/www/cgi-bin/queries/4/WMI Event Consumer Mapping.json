@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "WMI Event Consumer Mapping",
+    "notify_on_finish": "false",
+    "sql":"SELECT * FROM wmi_filter_consumer_binding;" 
+}

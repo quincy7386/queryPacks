@@ -1,0 +1,80 @@
+<!doctype html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<title>Use Case Information Request</title>
+<script type="text/javascript">
+     $(document).ready(function() {
+         $("#btnFetch").click(function() {
+             // disable button
+             $(this).prop("disabled", true);
+             // add spinner to button
+             $(this).html(
+        `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+             );
+             if (confirm('Please be patient while your report is being generated...')) {
+                 pyform.submit();
+             } else {
+                 return false;
+             }
+         });
+     });
+     function clicked() {
+       if (confirm('Please be patient while your report is being generated...')) {
+           yourformelement.submit();
+       } else {
+           return false;
+       }
+    }
+
+</script>
+</head>
+<body>
+<div style="background-color:cornflowerblue" class=container>
+    <h1>Use Case Information request</h1>
+</div>
+<div class=container>
+    <form class="form-horizontal" name="pyform" method="GET" action="/cgi-bin/helpdesk-0.4.py">
+      <div class="form-group row">
+      <label class="control-label col-sm-2" for="use_case">Use Case</label>
+      <div col-sm-10>
+          <select class="custom-select my-1 mr-sm-2" id="use_case" name="useCase">
+              <option selected>Choose...</option>
+              <option value="1">Help Desk</option>
+              <option value="2">IT Operations</option>
+              <option value="3">Compliance</option>
+              <option value="4">IR Snapshot</option>
+              <option value="5">Software Utilization Audit</option>
+          </select>
+      </div>
+      </div>
+      <div class="form-group row">
+          <label class="control-label col-sm-2" for="ticket">Ticket Number:</label>
+      <div col-sm-10>
+          <input type="text" name="ticket" />
+      </div>
+      </div>
+      <div class="form-group row">
+          <label class="control-label col-sm-2" for="host">Hostname:</label>
+      <div col-sm-10>
+          <input type="text" name="host" />
+      </div>
+      </div>
+      <hr>
+      <button type="button" id="btnFetch" class="btn btn-primary mb-2">Submit</button>
+    </form>
+</div>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+</body>
+</html>

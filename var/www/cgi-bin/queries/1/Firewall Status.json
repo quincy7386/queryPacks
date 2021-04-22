@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Firewall Status",
+    "notify_on_finish": "false",
+    "sql": "SELECT CASE DATA WHEN 0 THEN 'TRUE' WHEN 1 THEN 'FALSE' END 'Firewall Disabled', DATETIME(mtime, 'unixepoch', 'localtime') AS 'Last Modified' FROM registry WHERE KEY = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile' AND name = 'EnableFirewall';"
+}

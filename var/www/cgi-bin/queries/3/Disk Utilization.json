@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Disk Utilization",
+    "notify_on_finish": "false",
+    "sql": "select device_id,round(free_space/1073741824.0,2) || ' GB' as free_space,round(size/1073741824.0,2) || ' GB' as size,round((free_space/(size*1.0))*100,2) as '%_free',file_system,case boot_partition when 1 then 'YES' when 0 then 'NO' end as boot_partition from logical_drives;"
+}

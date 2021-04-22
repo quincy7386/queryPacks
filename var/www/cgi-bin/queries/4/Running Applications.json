@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Running Applications",
+    "notify_on_finish": "false",
+    "sql": "select p1.name,p1.pid,p1.path,u.username, p1.uid,p1.gid,p1.on_disk,p1.resident_size,p1.total_size, datetime(p1.start_time,'unixepoch','localtime') as start_time, p2.name as parent_name,p1.parent as parent_pid,p1.is_elevated_token from processes as p1 join processes as p2 on p1.pid = p2.parent join users as u using(uid)order by p1.pid;"
+}

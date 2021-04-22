@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Security Tool - %CPU ",
+    "notify_on_finish": "false",
+    "sql": "SELECT ((tool_time*100)/(SUM(system_time) + SUM(user_time))) AS '%_CPU' FROM processes, (SELECT (SUM(processes.system_time)+SUM(processes.user_time)) AS tool_time FROM processes WHERE name='RepMgr.exe');"
+}

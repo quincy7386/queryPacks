@@ -1,0 +1,10 @@
+{
+    "device_filter": {
+        "device_id": [
+            DEVICE_ID
+        ]
+    },
+    "name": "Network Information",
+    "notify_on_finish": "false",
+    "sql": "select p.name,pos.pid,case protocol when 6 then 'TCP' when 17 then 'UDP' else protocol end protocol,local_address,local_port,remote_address,remote_port,pos.state from process_open_sockets as pos join processes as p using(pid);"
+}

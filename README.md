@@ -1,6 +1,11 @@
 Make sure you have installed the Docker Desktop from [here](https://www.docker.com/products/docker-desktop).
 
-After you pull down this repo, you need to edit the `var/www/cgi-bin/credentials.psc` file and add your credentials, and ORG key. 
+After you pull down this repo, you need to edit the `var/www/cgi-bin/credentials.psc` file and add your credentials, and ORG key. The API key needs to be of type 'Custom', and in this format: 'API Secret Key/API ID'. The `var/www/cgi-bin/credentials.psc` file should look similar to this:
+
+[cblo]
+cbloUrl=https://defense-prod05.conferdeploy.net
+cbloToken=111111111111111111111111/22222222222
+orgKey=12345678
 
 Next you will build the image for the container, and you will only need to do this once, which will take
 a few minutes to complete. You might see some errors, but they can be ignored for the most part. Here is the build command:
@@ -39,3 +44,5 @@ a641cc3a84e9        adea87282549        "/bin/sh -c '/usr/sb…"   13 hours ago 
 ```
 
 Now you can navigate to http://localhost:8080 and find the demo UI.
+
+When entering the 'Hostname' field in the form, this is the device name on the Inventory page of the VMware Carbon Black Cloud.
